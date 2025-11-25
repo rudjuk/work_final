@@ -1,0 +1,188 @@
+.user-directory-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.user-directory-modal {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.user-directory-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-directory-header h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #202124;
+  margin: 0;
+}
+
+.user-directory-close {
+  background: none;
+  border: none;
+  color: #5f6368;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.user-directory-close:hover {
+  background-color: #f1f3f4;
+}
+
+.user-directory-content {
+  padding: 24px;
+}
+
+.user-directory-actions {
+  margin-bottom: 20px;
+}
+
+.user-directory-loading {
+  padding: 40px;
+  text-align: center;
+  color: #5f6368;
+}
+
+.user-form {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.user-form h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #202124;
+  margin: 0 0 16px 0;
+}
+
+.user-form-field {
+  margin-bottom: 16px;
+}
+
+.user-form-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 8px;
+}
+
+.user-form-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.user-form-field input:focus {
+  outline: none;
+  border-color: #1a73e8;
+}
+
+.user-form-field input.error {
+  border-color: #ea4335;
+}
+
+.error-message {
+  display: block;
+  color: #ea4335;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.user-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.user-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-info h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #202124;
+  margin: 0 0 4px 0;
+}
+
+.user-fullname {
+  font-size: 14px;
+  color: #5f6368;
+  margin: 0 0 2px 0;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #9aa0a6;
+  margin: 0;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.user-empty {
+  text-align: center;
+  padding: 40px;
+  color: #5f6368;
+  font-size: 14px;
+}
+

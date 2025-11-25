@@ -5,6 +5,4 @@ dist/
 .env
 .DS_Store
 *.log
-backend/dist/
-frontend/dist/
 

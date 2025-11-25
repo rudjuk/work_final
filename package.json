@@ -1,84 +1,25 @@
 {
-  "name": "work_final",
+  "name": "task-tracker",
+  "version": "1.0.0",
+  "description": "Full-stack task tracker application",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
     "build": "npm run build:backend && npm run build:frontend",
-    "build:frontend": "vite build",
-    "build:backend": "tsc --project tsconfig.backend.json",
-    "preview": "vite preview",
-    "server": "json-server --watch db.json --port 3000",
-    "start": "tsx server.ts",
-    "start:dev": "tsx watch server.ts",
-    "stop": "pkill -f 'tsx server.ts' || pkill -f 'tsx watch server.ts' || echo 'No server process found'",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
     "test": "npm run test:backend && npm run test:frontend",
-    "test:backend": "cross-env NODE_ENV=test jest",
-    "test:frontend": "vitest run",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "prepare": "husky install"
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0.0",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.5",
-    "@types/jest": "^30.0.0",
-    "@types/morgan": "^1.9.10",
-    "@types/supertest": "^6.0.3",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
-    "@vitejs/plugin-react": "^5.1.1",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.0.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.0",
-    "eslint-plugin-react": "^7.37.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "globals": "^15.0.0",
-    "husky": "^9.0.0",
-    "jest": "^30.2.0",
-    "jiti": "^2.6.1",
-    "jsdom": "^27.2.0",
-    "json-server": "^0.17.4",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.3.0",
-    "sequelize": "^6.37.7",
-    "sqlite3": "^5.1.7",
-    "supertest": "^7.1.4",
-    "ts-jest": "^29.4.5",
-    "tsx": "^4.20.6",
-    "typescript": "~5.9.3",
-    "vite": "^7.1.7",
-    "vitest": "^4.0.13"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^5.2.2",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "morgan": "^1.10.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-hook-form": "^7.66.1",
-    "react-router-dom": "^7.9.6",
-    "zod": "^4.1.13"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write"
-    ]
+    "concurrently": "^8.2.2"
   }
 }
+
